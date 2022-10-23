@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "permissions": ["scripting", "storage","activeTab", "tabs"],
+    "name": "SWO++",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "hello_extensions.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://scratchwars-online.cz/*"],
+          "js": ["main.js"],
+          "run_at": "document_end"
+        }
+      ],
+      "web_accessible_resources": [
+        {
+          "resources": [ "settings.html"],
+          "matches": [ "https://scratchwars-online.cz/*" ]
+        },
+        {
+        "resources": [ "darktheme.css"],
+        "matches": [ "https://scratchwars-online.cz/*" ]
+        }
+      ]
+  }
