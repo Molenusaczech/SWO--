@@ -5,14 +5,18 @@
     "description": "Base Level Extension",
     "version": "1.0",
     "action": {
-      "default_popup": "popup.html",
-      "default_icon": "hello_extensions.png"
+      "default_icon": "icon.png"
     },
     "content_scripts": [
         {
           "matches": ["https://scratchwars-online.cz/*"],
           "js": ["main.js"],
           "run_at": "document_end"
+        },
+        {
+          "matches": ["https://scratchwars-online.cz/*"],
+          "css": ["antiblink.css"],
+          "run_at": "document_start"
         }
       ],
       "web_accessible_resources": [
@@ -21,7 +25,7 @@
           "matches": [ "https://scratchwars-online.cz/*" ]
         },
         {
-        "resources": [ "darktheme.css"],
+        "resources": [ "darktheme.css", "normaltheme.css"],
         "matches": [ "https://scratchwars-online.cz/*" ]
         }
       ]

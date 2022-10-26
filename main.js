@@ -7,12 +7,6 @@ afterend.insertAdjacentHTML(positionSelect.value, '<strong>inserted');*/
 const subject = document.getElementsByClassName("nav-link nav-item");
 subject.insertAdjacentText("afterend", '<strong>inserted text</strong>');*/
 
-async function getCurrentTab() {
-    let queryOptions = { active: true, lastFocusedWindow: true };
-    // `tab` will either be a `tabs.Tab` instance or `undefined`.
-    let [tab] = await chrome.tabs.query(queryOptions);
-    return tab;
-  }
 
 const h2 = document.getElementById("navbarNav");
 
@@ -26,7 +20,7 @@ h2.insertAdjacentHTML("afterend", html);
 
 
 chrome.storage.sync.get(['theme'], function(result) {
-    console.log('Theme currently is ' + result.theme);
+    console.log('SWO++: Theme currently is ' + result.theme);
     if (result.theme == "dark") {
         var theme = chrome.runtime.getURL("darktheme.css");
         console.log("SWO++: theme: "+theme);
@@ -38,7 +32,13 @@ chrome.storage.sync.get(['theme'], function(result) {
         document.querySelector('h3').style.color = '#dcbe96';*/
 
         document.head.innerHTML = document.head.innerHTML+'<link href="'+theme+'" rel="stylesheet">';
+        console.log("SWO++: dark theme applied");
 
+    } else {
+      //document.body.style.backgroundColor = 'white !important';
+      //document.body.setAttribute( 'style', 'backgroundColor: white !important' );
+      var theme = chrome.runtime.getURL("normaltheme.css");
+      document.head.innerHTML = document.head.innerHTML+'<link href="'+theme+'" rel="stylesheet">';
     }
   });
 

@@ -1,4 +1,44 @@
 body {
-    background-color: #000000;
+    background-color: #36393f !important;
     color: #ffffff;
+}
+
+.bg-light {
+    background-color: #2f3136 !important;
+}
+
+.nav-link {
+    color: #96989d !important;
+}
+
+.footer .container {
+    background-color: #2f3136 !important;
+}
+
+.dropdown-menu {
+    background-color: #2f3136 !important;
+}
+
+.dropdown-item {
+    color: #ffffff !important;
+}
+
+.dropdown-item:hover {
+    background-color: #131416 !important;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.user-id {
+    color: #ffffff !important;
+}
+
+.list-group-item {
+    background-color: #2f3136 !important;
+}
+
+.breadcrumb {
+    background-color: #2f3136 !important;
 }
