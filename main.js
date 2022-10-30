@@ -88,8 +88,10 @@ chrome.storage.sync.get(['loginStatus'], function(result) {
         
          if (document.querySelector('[data-hero-family-id="103"]')) {
           var iid = document.querySelectorAll('[data-hero-family-id="103"]')[1].children[0].dataset.iid;
+          var cardType = "dobrodruh";
           } else {
             var iid = document.querySelectorAll('[data-hero-family-id="68"]')[1].children[0].dataset.iid;
+            var cardType = "saman";
           }
           console.log("SWO++: iid: "+iid);
 
@@ -109,7 +111,7 @@ chrome.storage.sync.get(['loginStatus'], function(result) {
 
               //var response = fetch("https://SWOPPServer.mole06.repl.co/index.php?token="+token+"&iid="+iid+"&login="+login+"&pin="+pin+"&card=saman").then(window.location.href = chrome.runtime.getURL("settings.html"));
 
-              var url = "https://SWOPPServer.mole06.repl.co/index.php?token="+token+"&iid="+iid+"&login="+login+"&pin="+pin+"&card=saman";
+              var url = "https://SWOPPServer.mole06.repl.co/index.php?token="+token+"&iid="+iid+"&login="+login+"&pin="+pin+"&card="+cardType;
 
               chrome.storage.sync.set({"loginStatus": "3"});  
       
