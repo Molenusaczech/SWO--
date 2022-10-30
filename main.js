@@ -87,7 +87,7 @@ chrome.storage.sync.get(['loginStatus'], function(result) {
           // implementovat mladého dobrodruha - 103
         
          if (document.querySelector('[data-hero-family-id="103"]')) {
-          var iid = document.querySelectorAll('[data-hero-family-id="106"]')[1].children[0].dataset.iid;
+          var iid = document.querySelectorAll('[data-hero-family-id="103"]')[1].children[0].dataset.iid;
           } else {
             var iid = document.querySelectorAll('[data-hero-family-id="68"]')[1].children[0].dataset.iid;
           }
