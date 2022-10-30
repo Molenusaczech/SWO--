@@ -110,6 +110,8 @@ chrome.storage.sync.get(['loginStatus'], function(result) {
               //var response = fetch("https://SWOPPServer.mole06.repl.co/index.php?token="+token+"&iid="+iid+"&login="+login+"&pin="+pin+"&card=saman").then(window.location.href = chrome.runtime.getURL("settings.html"));
 
               var url = "https://SWOPPServer.mole06.repl.co/index.php?token="+token+"&iid="+iid+"&login="+login+"&pin="+pin+"&card=saman";
+
+              chrome.storage.sync.set({"loginStatus": "3"});  
       
               var xhr = new XMLHttpRequest();
               xhr.open("GET", url);
@@ -125,6 +127,8 @@ chrome.storage.sync.get(['loginStatus'], function(result) {
               }};
         
               xhr.send();
+
+              
 
               
 
