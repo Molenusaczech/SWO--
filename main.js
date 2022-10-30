@@ -85,7 +85,21 @@ chrome.storage.sync.get(['loginStatus'], function(result) {
           //document.querySelectorAll('[data-hero-family-id="68"]')[1].click();
 
           // implementovat mladého dobrodruha - 103
-          var iid = document.querySelectorAll('[data-hero-family-id="68"]')[1].children[0].dataset.iid;
+        
+         if (document.querySelector('[data-hero-family-id="103"]')) {
+          var iid = document.querySelectorAll('[data-hero-family-id="106"]')[1].children[0].dataset.iid;
+          } else {
+            var iid = document.querySelectorAll('[data-hero-family-id="68"]')[1].children[0].dataset.iid;
+          }
+          console.log("SWO++: iid: "+iid);
+
+          //var iid = document.querySelectorAll('[data-hero-family-id="103"]')[1].children[0].dataset.iid;
+          /*console.log("SWO++: iid: "+iid);
+          if (typeof idd !== 'undefined') {
+            var iid = document.querySelectorAll('[data-hero-family-id="68"]')[1].children[0].dataset.iid;
+            console.log("SWO++: iid2: "+iid);
+        }*/
+          
           
           
           chrome.storage.sync.set({"verifyiid": iid}, function() {
